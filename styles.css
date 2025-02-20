@@ -1,0 +1,281 @@
+/* Apply Exo 2 font globally */
+body {
+    font-family: 'Exo 2', sans-serif; /* Set the font to Exo 2 */
+    margin: 0;
+    padding: 0;
+    background-color: #111;
+    color: white;
+    text-align: center;
+}
+header {
+    background-color: rgba(0, 0, 0, 0.5); /* Black color with 50% transparency */
+    padding: 20px;
+}
+header {
+    background-color: black;
+    padding: 20px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    transition: color 0.3s ease; /* Add a smooth transition for color */
+}
+
+/* Hover effect for navigation links */
+nav ul li a:hover {
+    color: #007bff; /* Change the text color on hover to blue */
+}
+
+/* Scroll down link styling */
+.scroll-link {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.scroll-link:hover {
+    text-decoration: none;
+    color: white;
+}
+
+/* Gallery styles */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.project {
+    width: 300px;
+    height: 400px;
+    background-color: #222;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.project img {
+    width: 100%;
+    height: 80%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.project p {
+    margin: 10px 0;
+}
+
+/* Modal Styling */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #222;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 80%;
+    text-align: center;
+}
+
+.modal img {
+    width: 100%;
+    max-height: 500px;
+    object-fit: contain;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+}
+
+#contact {
+    padding: 20px;
+    background-color: black;
+}
+
+footer {
+    background-color: black;
+    padding: 10px;
+}
+
+/* Scroll Arrow styling */
+.scroll-arrow {
+    position: fixed;
+    bottom: 50px;
+    right: 20px;
+    font-size: 30px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none; /* Initially hidden */
+    z-index: 1000;
+}
+
+#scroll-top {
+    bottom: 80px;
+}
+
+#scroll-bottom {
+    bottom: 50px;
+}
+
+.scroll-arrow:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Bold the h1 element */
+h1 {
+    font-family: 'Alegreya Sans', sans-serif; /* Set the font to Alegreya Sans */
+    font-weight: bold;
+    color: white;
+    transition: transform 0.3s ease, color 0.3s ease; /* Smooth transition for transform and color */
+}
+
+
+h2 {
+    font-family: 'Alegreya Sans', sans-serif; /* Set the font to Alegreya Sans */
+    color: white; /* Default color */
+    transition: transform 0.3s ease, color 0.3s ease; /* Smooth transition for both color and transform */
+}
+
+/* Basic styling for the <p> element */
+#hero p {
+    font-size: 18px;
+    color: white;
+    font-family: 'Exo 2', sans-serif; /* Use Exo 2 font */
+    transition: transform 0.3s ease, color 0.3s ease; /* Smooth transition for both transform and color */
+}
+
+/* Hover effect */
+#hero p:hover {
+    transform: scale(1.1); /* Slightly enlarge the text on hover */
+    color: #007bff; /* Change text color to blue when hovered */
+}
+
+#hero h2 {
+    font-size: 45px; /* Set the font size to 45px, or adjust to your desired size */
+    color: white; /* Make sure the text color is visible */
+    font-family: 'Exo 2', sans-serif; /* Use Exo 2 font */
+}
+
+.background-video {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+@media (min-aspect-ratio: 16/9) {
+    .background-video {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (min-aspect-ratio: 16/9) {
+    .background-video {
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* Adjust the size of the image container */
+.project {
+    width: 250px; /* Adjust the width */
+    height: 350px; /* Adjust the height */
+    background-color: #222;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px; /* Adjust the padding */
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* Adjust the size and fit of the images */
+.project img {
+    width: 100%;
+    height: 80%; /* Ensure images are proportional */
+    object-fit: cover; /* cover, contain, fill, none, scale-down */
+    border-radius: 10px;
+}
+
+/* Adjust the spacing between projects */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px; /* Adjust the gap between projects */
+    padding: 30px; /* Adjust the padding around the gallery */
+}
+
+/* Add hover effects to the project */
+.project:hover {
+    transform: scale(1.05); /* Slightly enlarge the project on hover */
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5); /* Add a subtle shadow */
+}
+
+/* Add transition for the hover effect */
+.project img {
+    transition: filter 0.3s ease, transform 0.3s ease; /* Smooth transition for filter and transform */
+}
+
+/* Lighten the image on hover */
+.project:hover img {
+    filter: brightness(1.2); /* Lighten the image */
+}
+
+/* Add a bold effect to project titles */
+.project p {
+    margin: 10px 0;
+    font-weight: bold;
+}
+.background-video {
+    position: fixed; /* Fixed position to ensure it stays in place */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the video covers the entire area without distortion */
+    z-index: -1; /* Places the video behind other content */
+}

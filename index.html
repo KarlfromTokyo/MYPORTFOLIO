@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Graphic Design Portfolio</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="script.js" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@400;700&family=Exo+2:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .gallery {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px; /* Adjust the gap between images */
+        justify-content: space-around;
+      }
+
+      .gallery .project {
+        flex: 1 0 21%; /* Adjust the size of the images */
+        box-sizing: border-box;
+        overflow: hidden;
+      }
+
+      .gallery .project img {
+        width: 100%;
+        height: 250px; /* Set a uniform height */
+        object-fit: contain; /* Ensures the full image is visible without distortion */
+      }
+
+      /* Add larger margin to create bigger gaps between sections */
+      .section-gap {
+        margin-top: 150px; /* Adjust this value to increase the gap size */
+        margin-bottom: 150px; /* Add bottom margin for consistent spacing */
+      }
+
+      /* Modal Styling */
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        justify-content: center;
+        align-items: center;
+        opacity: 0; /* Initial opacity */
+        transition: opacity 0.5s ease; /* Smooth transition for opacity */
+      }
+
+      .modal-content {
+        background-color: #222;
+        padding: 20px;
+        border-radius: 10px;
+        max-width: 80%;
+        text-align: center;
+        overflow-y: auto; /* Enable scrolling for modal content if needed */
+        max-height: 90%; /* Ensure it doesn't exceed the viewport height */
+        transform: scale(0.8); /* Initial scale */
+        transition: transform 0.5s ease; /* Smooth transition for scale */
+      }
+
+      .modal.show {
+        display: flex;
+        opacity: 1; /* Final opacity */
+      }
+
+      .modal.show .modal-content {
+        transform: scale(1); /* Final scale */
+      }
+
+      .modal img {
+        width: 100%;
+        height: auto; /* Allow height to adjust automatically */
+        object-fit: contain; /* Ensures the full image is visible without distortion */
+        margin-bottom: 10px; /* Add some margin between images */
+      }
+
+      .close {
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        font-size: 30px;
+        cursor: pointer;
+        color: white;
+      }
+
+      .project-modal {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px; /* Adjust the gap between images */
+      }
+
+      .project-modal img {
+        border: 2px solid white; /* Add borders to the modal images */
+        flex: 1 0 48%; /* Adjust the size of the images within the modal */
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Karl Cadayona</h1>
+      <nav>
+        <ul>
+          <li><a href="#work">My Works</a></li>
+          <li><a href="#about">About Me</a></li>
+          <li><a href="#contact">Contact Me</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section id="hero" class="section-gap">
+      <video autoplay loop muted plays-inline class="background-video">
+        <source src="images/space.mp4.mp4" type="video/mp4" />
+      </video>
+      <h2>Hi, I'm Karl Cadayona!<br /></h2>
+      <p><a href="#work" class="scroll-link">Scroll down to see more</a></p>
+    </section>
+
+    <section id="about" class="section-gap">
+      <h2>About Me</h2>
+      <p>
+        Hi there! I'm Karl Rynell G. Cadayona, a 21-year-old aspiring graphic
+        designer ,and illustrator based in Koronadal City, South Cotabato,
+        Philippines. With a keen eye for detail and a passion for visual
+        storytelling, I strive to create compelling and visually stunning
+        designs.
+      </p>
+      <p>
+        My journey into the world of graphic design and illustration has been
+        driven by my love for creativity and innovation. Over the years, I've
+        honed my skills and worked on various projects that reflect my growth
+        and dedication to the craft.
+      </p>
+      <p>
+        I invite you to explore my portfolio and discover the range of my work.
+        From product designs to digital illustrations, each piece tells a unique
+        story and showcases my commitment to excellence. Thank you for taking
+        the time to view my creations, and I hope they resonate with you as much
+        as they do with me.
+      </p>
+    </section>
+
+    <section id="work" class="section-gap">
+      <h2>My Work</h2>
+      <div class="gallery">
+        <div class="project" onclick="openModal('jersey-modal')">
+          <img src="images/jersey1.jpg" alt="Product Design (Jersey)" />
+          <p>Product Design (Jersey) - 2025</p>
+        </div>
+        <div class="project" onclick="openModal('brochure-modal')">
+          <img src="images/brochure.jpg" alt="School Brochure" />
+          <p>Brochure (School Promotion) - 2025</p>
+        </div>
+        <div class="project" onclick="openModal('mma-modal')">
+          <img src="images/mma1.jpg" alt="Event Poster" />
+          <p>Event Posters - 2025</p>
+        </div>
+        <div class="project" onclick="openModal('illustrations-modal')">
+          <img
+            src="images/sunset2.jpg"
+            alt="Digital Illustrations Collection"
+          />
+          <p>Digital Illustrations Collection - 2025</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modal Structures -->
+    <div id="jersey-modal" class="modal">
+      <span class="close" onclick="closeModal('jersey-modal')">&times;</span>
+      <div class="modal-content project-modal">
+        <img src="images/jersey1.jpg" alt="Product Design (Jersey)" />
+        <img src="images/mma2.jpg" alt="Product Design (Jersey)" />
+
+        <!-- Add more images here if needed -->
+      </div>
+    </div>
+
+    <div id="brochure-modal" class="modal">
+      <span class="close" onclick="closeModal('brochure-modal')">&times;</span>
+      <div class="modal-content project-modal">
+        <img src="images/brochure.jpg" alt="School Brochure" />
+        <!-- Add more images here if needed -->
+      </div>
+    </div>
+
+    <div id="mma-modal" class="modal">
+      <span class="close" onclick="closeModal('mma-modal')">&times;</span>
+      <div class="modal-content project-modal">
+        <img src="images/mma1.jpg" alt="Event Poster" />
+        <img src="images/mma3.png" alt="Event Poster" />
+
+        <!-- Add more images here if needed -->
+      </div>
+    </div>
+
+    <div id="illustrations-modal" class="modal">
+      <span class="close" onclick="closeModal('illustrations-modal')"
+        >&times;</span
+      >
+      <div class="modal-content project-modal">
+        <img src="images/sunset2.jpg" alt="Digital Illustrations Collection" />
+        <img
+          src="images/windbreaker.jpg"
+          alt="Digital Illustrations Collection"
+        />
+        <img src="images/pump.jpg" alt="Digital Illustrations Collection" />
+        <img src="images/sunset1.jpg" alt="Digital Illustrations Collection" />
+
+        <!-- Add more images here if needed -->
+      </div>
+    </div>
+
+    <section id="contact" class="section-gap">
+      <h2>Contact Me</h2>
+      <p>Email: karlcadayona16@gmail.com.com</p>
+      <p>Contact No. 09691925537</p>
+    </section>
+
+    <footer>
+      <p>&copy; 2025 Karl Cadayona. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+      // Function to open a modal
+      function openModal(modalId) {
+        const modal = document.getElementById(modalId);
+        modal.classList.add("show");
+        setTimeout(() => {
+          modal.style.display = "flex";
+        }, 1);
+      }
+
+      // Function to close a modal
+      function closeModal(modalId) {
+        const modal = document.getElementById(modalId);
+        modal.classList.remove("show");
+        setTimeout(() => {
+          modal.style.display = "none";
+        }, 500); // Duration of the transition
+      }
+
+      // Close the modal when clicking outside of it
+      window.onclick = function (event) {
+        if (event.target.classList.contains("modal")) {
+          closeModal(event.target.id);
+        }
+      };
+    </script>
+  </body>
+</html>
